@@ -1,0 +1,38 @@
+$dark-blue:         #062b71;
+$rooms-blue:        #0559b1;
+$bright-blue:       #2091eb;
+$brighter-blue:     #52a8ec;
+$washed-blue:       #e8f4fd;
+$main-yellow:       #f1c933;
+$very-dark-grey:    #2e2e2e;
+$text-grey:         #758193;
+$lines-grey:        #bbc3cf;
+$error-red-bg:      #feeaea;
+$error-red:         #cf2e1d;
+$light-base:        #fff;
+
+$colors: (
+  dark-blue:         $dark-blue,
+  rooms-blue:        $rooms-blue,
+  bright-blue:       $bright-blue,
+  brighter-blue:     $brighter-blue,
+  washed-blue:       $washed-blue,
+  main-yellow:       $main-yellow,
+  very-dark-grey:    $very-dark-grey,
+  text-grey:         $text-grey,
+  lines-grey:        $lines-grey,
+  error-red-bg:      $error-red-bg,
+  error-red:         $error-red,
+  light-base:        $light-base
+);
+
+@mixin gen-props($prefix, $property) {
+  @each $color-name, $color in $colors {
+    .#{$prefix}-#{$color-name} {
+      #{$property}: $color;
+    }
+  }
+}
+
+@include gen-props('c', 'color');
+@include gen-props('fill', 'fill');

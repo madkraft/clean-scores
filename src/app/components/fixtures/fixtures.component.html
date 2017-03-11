@@ -1,0 +1,34 @@
+<div *ngFor="let match of matches">
+  <div *ngIf="match.matchday === (currMatchday - 1) || match.matchday === currMatchday || match.matchday === (currMatchday + 1)" class="fixture">
+    <!--<div>Matchday: {{ match.matchday }}</div>-->
+    <div class="fixture__game">
+      <div class="fixture__team" 
+        [class.dimmed]="match.result.goalsHomeTeam < match.result.goalsAwayTeam">
+        <span>
+          {{ match.homeTeamName }}
+        </span>
+        <span>
+          {{ match.result.goalsHomeTeam }}
+        </span>
+      </div>
+      <div class="fixture__team" 
+        [class.dimmed]="match.result.goalsHomeTeam > match.result.goalsAwayTeam">
+        <span>
+          {{ match.awayTeamName }}
+        </span>
+        <span>
+          {{ match.result.goalsAwayTeam }}
+        </span>
+      </div>
+    </div>
+    <div class="fixture__status">
+      <div>
+        {{ match.status }}
+      </div>
+      <div>
+        {{ match.date | date }}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/typography";
+@import "./assets/palette";
+@import "./assets/align";
+@import "./assets/normalize";
+@import "./assets/skeleton";
+@import "~flexboxgrid";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cf:before,
+.cf:after {
+    content: '';
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.page {
+  margin: 1rem;
+}

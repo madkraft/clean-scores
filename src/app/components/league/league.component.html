@@ -1,0 +1,11 @@
+<div class="page">
+  <h4 class="text-center">{{ leagueCaption }}</h4>
+  <div class="row between-xs col-xs-12">
+    <span class="hug">Matchday: {{ matchday }}</span>
+    <a (click)="showTable = true" [class.active]="showTable">Table</a>
+    <a (click)="showTable = false" [class.active]="!showTable">Matches</a>
+  </div>
+  <!--<div>News</div>-->
+  <app-standings [class.hidden]="!showTable" [teams]="standings"></app-standings>
+  <app-fixtures [class.hidden]="showTable" [matches]="fixtures" [currMatchday]="matchday"></app-fixtures>
+</div>

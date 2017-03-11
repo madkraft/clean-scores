@@ -1,0 +1,10 @@
+@import "../../../assets/media";
+
+.hidden-cell {
+  display: none;
+
+  @include xs {
+    display: table-cell;
+  }
+}
+

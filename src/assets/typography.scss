@@ -1,0 +1,97 @@
+@import './media';
+
+$text: (
+  text-l: (
+    font-size: 2.313rem,
+    font-weight: 700,
+    letter-spacing: 0.056rem
+  ),
+  text-m: (
+    font-size: 1.125rem,
+    font-weight: 500,
+    letter-spacing: 0.05rem
+  ),
+  text-s-regular: (
+    font-size: 0.875rem,
+    font-weight: 400,
+    letter-spacing: 0.044rem
+  ),
+  text-s-medium: (
+    font-size: 0.875rem,
+    font-weight: 500,
+    letter-spacing: 0.044rem
+  ),
+  text-xs-bold: (
+    font-size: 0.75rem,
+    font-weight: 700,
+    letter-spacing: 0.003rem
+  ),
+  text-xs-regular: (
+    font-size: 0.75rem,
+    font-weight: 400,
+    letter-spacing: 0.003rem
+  ),
+  hidden: (
+    display: none
+  ),
+  visible: (
+    display: table-cell
+  )
+);
+
+@mixin get-default($text-class) {
+  @each $property, $value in map-get($text, unquote($text-class)) {
+    #{$property}: $value;
+  }
+}
+
+.text-l {
+  @include get-default('text-l');
+}
+
+.text-m {
+  @include get-default('text-m');
+}
+
+.text-s-regular {
+  @include get-default('text-s-regular');
+}
+
+.text-s-medium {
+  @include get-default('text-s-medium');
+}
+
+.text-xs-bold {
+  @include get-default('text-xs-bold');
+}
+
+.text-xs-regular {
+  @include get-default('text-xs-regular');
+}
+
+// creates text-classes with media suffix i.e .text-l-sm
+@each $text-class in map-keys($text) {
+  .#{$text-class}-xs {
+    @include xs {
+      @include get-default('#{$text-class}');
+    }
+  }
+
+  .#{$text-class}-sm {
+    @include sm {
+      @include get-default('#{$text-class}');
+    }
+  }
+
+  .#{$text-class}-md {
+    @include md {
+      @include get-default('#{$text-class}');
+    }
+  }
+
+  .#{$text-class}-lg {
+    @include lg {
+      @include get-default('#{$text-class}');
+    }
+  }
+}

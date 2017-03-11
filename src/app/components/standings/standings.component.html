@@ -1,0 +1,22 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Club</th>
+      <th>MP</th>
+      <th class="hidden-cell">GF</th>
+      <th class="hidden-cell">GA</th>
+      <th>Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams; let i = index">
+      <td>{{team.position}}</td>
+      <td>{{team.teamName}}</td>
+      <td>{{team.playedGames}}</td>
+      <td class="hidden-cell">{{team.goals}}</td>
+      <td class="hidden-cell">{{team.goalsAgainst}}</td>
+      <td>{{team.points}}</td>
+    </tr>
+  </tbody>
+</table>

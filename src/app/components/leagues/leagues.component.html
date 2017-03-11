@@ -1,0 +1,11 @@
+<div class="page">
+  <div *ngFor="let league of leagues$ | async">
+    <div *ngIf="league.currentMatchday !== league.numberOfMatchdays">
+      <a [routerLink]="['/leagues', league.id]">
+        <h4 class="leagues__caption">{{ league.caption }}</h4>
+      </a>
+      <p class="leagues__status">Last updated: {{ league.lastUpdated | date }}</p>
+    </div>
+    <!--<p *ngIf="league.currentMatchday === league.numberOfMatchdays">Ended</p>-->
+  </div>
+</div>
