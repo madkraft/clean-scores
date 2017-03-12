@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./assets/typography";
-@import "./assets/palette";
-@import "./assets/align";
-@import "./assets/normalize";
-@import "./assets/skeleton";
+@import "./styles/typography";
+@import "./styles/palette";
+@import "./styles/align";
+@import "./styles/normalize";
+@import "./styles/skeleton";
 @import "~flexboxgrid";
 
 *, *:before, *:after {

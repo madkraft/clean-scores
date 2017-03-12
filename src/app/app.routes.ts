@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+// import { HomeComponent } from './components/home/home.component';
 import { LeaguesComponent } from './components/leagues/leagues.component';
 import { LeagueComponent } from './components/league/league.component';
 import { FourOhFourComponent } from './components/four-oh-four/four-oh-four.component';
@@ -12,4 +12,4 @@ const appRoutes: Routes = [
   {path: '**', component: FourOhFourComponent}
 ];
 
-export default RouterModule.forRoot(appRoutes);
+export const Routing = RouterModule.forRoot(appRoutes);

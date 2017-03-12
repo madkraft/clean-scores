@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import appRoutes from './app.routes';
+import {Routing} from './app.routes';
 
 import { LeaguesService } from './services/leagues.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+// import { HomeComponent } from './components/home/home.component';
 import { LeaguesComponent } from './components/leagues/leagues.component';
 import { LeagueComponent } from './components/league/league.component';
 import { StandingsComponent } from './components/standings/standings.component';
@@ -20,7 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    // HomeComponent,
     LeaguesComponent,
     LeagueComponent,
     StandingsComponent,
@@ -30,9 +29,8 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    appRoutes
+    Routing
   ],
   providers: [LeaguesService],
   bootstrap: [AppComponent]
