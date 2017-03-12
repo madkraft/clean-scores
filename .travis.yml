@@ -7,8 +7,8 @@ cache:
 node_js:
   - "6"
 script:
-  - npm install -g surge
   - npm install
   - ng build --target=production
-after_success:
-  - npm run surge-deploy
+deploy:
+  provider: surge
+  domain: whatsthescore.surge.sh
